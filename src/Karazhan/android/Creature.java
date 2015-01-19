@@ -1,16 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ * 
+*/
+
 package Karazhan.android;
 
-/**
- *
- * @author 42
- */
 public abstract class Creature implements CreatureInterface {
-
     private int life;
     private int speed;
     private int pp;
@@ -18,15 +12,17 @@ public abstract class Creature implements CreatureInterface {
     private String type;
     
     public void addLife(int hp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        life =+ hp;
     }
 
     public void removeLife(int hp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        life =- hp;
     }
 
     public boolean isDead() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (life <= 0)
+            return true;
+        return false;
     }
 
     public int getLife() {
@@ -68,5 +64,4 @@ public abstract class Creature implements CreatureInterface {
     public void setType(String type) {
         this.type = type;
     }
-
 }
